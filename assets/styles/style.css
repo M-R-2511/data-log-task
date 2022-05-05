@@ -96,7 +96,7 @@ input {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -122,6 +122,7 @@ input {
 .sections__choice {
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
   margin-top: 5rem;
+  user-select: none;
 }
 
 .sections__list {
