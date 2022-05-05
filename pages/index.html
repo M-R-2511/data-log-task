@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Mohamed Ragab" />
+    <meta name="description" content="A website include data of companies, books, and persons you can search about any one of them" />
+    <meta name="keywords" content="books, companies, persons" />
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/index.js" defer></script>
+    <title>API Task</title>
+  </head>
+  <body>
+    
+
+    <header>
+      <nav class="container nav__container">
+        <h1 class="logo">M-<span>Ragab</span></h1>
+
+        <fieldset>
+          <label class="darkMode-label" for="dark-mode">
+            <strong>Dark <span>Mode</span></strong>
+            <input id="dark-mode" class="dark-mode" type="checkbox" />
+          </label>
+        </fieldset>
+      </nav>
+    </header>
+    <!-- ============= End-Header ============= -->
+
+    <main>
+      <div class="sections__choice">
+        <ul class="sections__list">
+          <li>
+            <button class="sections__list--item active">All</button>
+          </li>
+          <li>
+            <button class="sections__list--item">persons</button>
+          </li>
+          <li>
+            <button class="sections__list--item">books</span>
+          </li>
+          <li>
+            <button class="sections__list--item">companies</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ============= Persons ============= -->
+      <section id="persons">
+        <div class="container">
+          <h2 class="title">Persons</h2>
+          <form onsubmit="handleFormSubmit(event)" class="search-form">
+            <input
+              class="search-input"
+              type="text"
+              name="search"
+              oninput="searchData(this)"
+              placeholder="Search by name"
+            />
+          </form>
+          <div class="persons__cards cards">
+            <div class="loader">
+              <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 100 100"
+                enable-background="new 0 0 0 0" xml:space="preserve"
+                width="150" height="150"> <path fill="#000"
+                d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 
+                M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"> <animateTransform attributeName="transform"
+                attributeType="XML" type="rotate" dur="1s"
+                from="0 50 50" to="360 50 50"
+                repeatCount="indefinite" />
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============= Books ============= -->
+      <section id="books">
+        <div class="container">
+          <h2 class="title">Books</h2>
+          <form onsubmit="handleFormSubmit(event)" class="search-form">
+            <input
+              class="search-input"
+              type="text"
+              name="search"
+              oninput="searchData(this)"
+              placeholder="Search by title"
+            />
+          </form>
+          <div class="books__cards cards">
+            <div class="loader">
+              <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 100 100"
+                enable-background="new 0 0 0 0" xml:space="preserve"
+                width="150" height="150"> <path fill="#000"
+                d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 
+                M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"> <animateTransform attributeName="transform"
+                attributeType="XML" type="rotate" dur="1s"
+                from="0 50 50" to="360 50 50"
+                repeatCount="indefinite" />
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============= Companies ============= -->
+      <section id="companies">
+        <div class="container">
+          <h2 class="title">Companies</h2>
+          <form onsubmit="handleFormSubmit(event)" class="search-form">
+            <input
+              class="search-input"
+              type="text"
+              name="search"
+              oninput="searchData(this)"
+              placeholder="Search by company"
+            />
+          </form>
+          <div class="companies__cards cards">
+            <div class="loader">
+              <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 100 100"
+                enable-background="new 0 0 0 0" xml:space="preserve"
+                width="150" height="150"> <path fill="#000"
+                d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 
+                M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"> <animateTransform attributeName="transform"
+                attributeType="XML" type="rotate" dur="1s"
+                from="0 50 50" to="360 50 50"
+                repeatCount="indefinite" />
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
