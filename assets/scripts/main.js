@@ -76,10 +76,6 @@ function showData(data, cards) {
           `;
         break;
     }
-    if (cards === personsCards) {
-    } else if (cards === booksCards) {
-    } else {
-    }
   });
 }
 
