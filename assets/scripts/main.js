@@ -15,6 +15,14 @@ async function getData(apiEndpoint, cards) {
     })
     .catch((error) => {
       console.log(error);
+      loaders.forEach((loader) => {
+        loader.classList.remove("loader--hide");
+      });
+    })
+    .finally(() => {
+      loaders.forEach((loader) => {
+        loader.classList.add("loader--hide");
+      });
     });
 }
 getData("persons", personsCards);
@@ -23,10 +31,6 @@ getData("companies", companiesCards);
 
 // Show Data in Cards
 function showData(data, cards) {
-  loaders.forEach((loader) => {
-    loader.classList.add("loader--hide");
-  });
-
   data.forEach((card) => {
     switch (cards) {
       case personsCards:
