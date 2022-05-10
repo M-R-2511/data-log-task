@@ -51,7 +51,7 @@ body {
 
 @media screen and (max-width: 992px) {
   .container {
-    width: 98%;
+    width: 100%;
   }
 }
 
@@ -215,11 +215,26 @@ input {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
+
+  .cards .card .card__email {
+    font-size: 0.9rem;
+    word-break: break-all;
+  }
+  .cards .card p {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 690px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .cards .card .card__email {
+    font-size: 0.8rem;
+  }
+  .cards .card p {
+    font-size: 0.7rem;
   }
 }
 

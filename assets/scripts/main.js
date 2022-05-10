@@ -39,7 +39,7 @@ function showData(data, cards) {
           <div style="background-image:url(${card.image})" class="card__image"></div>
           <div class="card__info">
               <h2 class="card__title"><span>Name</span>: ${card.firstname} ${card.lastname}</h2>
-              <h4><span>Email</span>: ${card.email}</h4>
+              <h4 class="card__email"><span>Email</span>: ${card.email}</h4>
               <p><span>birthday:</span> ${card.birthday}</p>
               <p><span>Phone:</span> ${card.phone}</p>
               <p><span>website:</span> <a href="${card.website}" target="_blank" class="card__link">${card.website}</a></p>
@@ -53,7 +53,7 @@ function showData(data, cards) {
             <div style="background-image:url(${card.image})" class="card__image"></div>
             <div class="card__info">
                 <h2 class="card__title"><span>title</span>: ${card.title}</h2>
-                <h4><span>author</span>: ${card.author}</h4>
+                <h4 class="card__email"><span>author</span>: ${card.author}</h4>
                 <p><span>published:</span> ${card.published}</p>
                 <p><span>description:</span> ${card.description}</p>
             </div>
@@ -66,7 +66,7 @@ function showData(data, cards) {
             <div style="background-image:url(${card.image})" class="card__image"></div>
             <div class="card__info">
                 <h2 class="card__title"><span>Company</span>: ${card.name}</h2>
-                <h4><span>Email</span>: ${card.email}</h4>
+                <h4 class="card__email"><span>Email</span>: ${card.email}</h4>
                 <p><span>country:</span> ${card.country}</p>
                 <p><span>Phone:</span> ${card.phone}</p>
                 <p><span>website:</span> <a href="${card.website}" target="_blank" class="card__link">${card.website}</a></p>
