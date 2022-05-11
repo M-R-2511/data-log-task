@@ -205,13 +205,13 @@ input {
   gap: 1rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1310px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 992px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }

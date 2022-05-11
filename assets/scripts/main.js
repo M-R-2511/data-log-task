@@ -108,12 +108,19 @@ function handleFormSubmit(event) {
 function searchData(input) {
   // Select Search Input
   let cardsSearch;
-  input.placeholder === "Search by name"
-    ? (cardsSearch = document.querySelectorAll(".persons__cards .card"))
-    : input.placeholder === "Search by title"
-    ? (cardsSearch = document.querySelectorAll(".books__cards .card"))
-    : (cardsSearch = document.querySelectorAll(".companies__cards .card"));
+  switch (input.placeholder) {
+    case "Search by name":
+      cardsSearch = document.querySelectorAll(".persons__cards .card");
+      break;
+    case "Search by title":
+      cardsSearch = document.querySelectorAll(".books__cards .card");
+      break;
+    default:
+      cardsSearch = document.querySelectorAll(".companies__cards .card");
+      break;
+  }
 
+  // Search Data
   const searchValue = input.value.toLowerCase();
 
   cardsSearch.forEach((card) => {
