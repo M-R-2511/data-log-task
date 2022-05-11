@@ -35,7 +35,7 @@ function showData(data, cards) {
     switch (cards) {
       case personsCards:
         cards.innerHTML += `
-      <div class="card">
+      <div data-aos="flip-left" class="card">
           <div style="background-image:url(${card.image})" class="card__image"></div>
           <div class="card__info">
               <h2 class="card__title"><span>Name</span>: ${card.firstname} ${card.lastname}</h2>
@@ -49,7 +49,8 @@ function showData(data, cards) {
         break;
       case booksCards:
         cards.innerHTML += `
-        <div class="card">
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="top-center" class="card">
             <div style="background-image:url(${card.image})" class="card__image"></div>
             <div class="card__info">
                 <h2 class="card__title"><span>title</span>: ${card.title}</h2>
@@ -62,7 +63,7 @@ function showData(data, cards) {
         break;
       case companiesCards:
         cards.innerHTML += `
-        <div class="card">
+        <div data-aos="fade-down" class="card">
             <div style="background-image:url(${card.image})" class="card__image"></div>
             <div class="card__info">
                 <h2 class="card__title"><span>Company</span>: ${card.name}</h2>
