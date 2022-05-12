@@ -139,12 +139,13 @@ function searchData(input) {
 
 // ============= Choose section =============
 const listItems = document.querySelectorAll(".sections__list--item");
-const persons = document.getElementById("persons");
-const books = document.getElementById("books");
-const companies = document.getElementById("companies");
+var persons = document.getElementById("persons");
+var books = document.getElementById("books");
+var companies = document.getElementById("companies");
 
 listItems.forEach((item) => {
   item.addEventListener("click", () => {
+    AOS.refresh();
     listItems.forEach((item) => {
       item.classList.remove("active");
     });
@@ -153,20 +154,24 @@ listItems.forEach((item) => {
     // Show section based on list item
     if (item.innerText === "PERSONS") {
       persons.style.display = "grid";
-      books.style.display = "none";
-      companies.style.display = "none";
+      books.style.display = companies.style.display = "none";
     } else if (item.innerText === "BOOKS") {
-      persons.style.display = "none";
       books.style.display = "grid";
-      companies.style.display = "none";
+      persons.style.display = companies.style.display = "none";
     } else if (item.innerText === "COMPANIES") {
-      persons.style.display = "none";
-      books.style.display = "none";
+      persons.style.display = books.style.display = "none";
       companies.style.display = "grid";
     } else {
-      persons.style.display = "grid";
-      books.style.display = "grid";
-      companies.style.display = "grid";
+      persons.style.display =
+        books.style.display =
+        companies.style.display =
+          "grid";
     }
   });
+});
+
+// ============= Fix AOS problem when change Sections =============
+var scrollStarted = 0;
+window.addEventListener("scroll", function () {
+  scrollStarted <= 10 ? scrollStarted++ : AOS.refresh();
 });
