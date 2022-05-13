@@ -107,17 +107,22 @@ function handleFormSubmit(event) {
 
 // ============= Search Data =============
 function searchData(input) {
+  // to ignore (name: ,title: , and company: ) from search
+  let sliceCount = 0;
   // Select Search Input
   let cardsSearch;
   switch (input.placeholder) {
     case "Search by name":
       cardsSearch = document.querySelectorAll(".persons__cards .card");
+      sliceCount = 6;
       break;
     case "Search by title":
       cardsSearch = document.querySelectorAll(".books__cards .card");
+      sliceCount = 7;
       break;
     default:
       cardsSearch = document.querySelectorAll(".companies__cards .card");
+      sliceCount = 9;
       break;
   }
 
@@ -125,15 +130,20 @@ function searchData(input) {
   const searchValue = input.value.toLowerCase();
 
   cardsSearch.forEach((card) => {
-    const cardTitle = card
+    let cardTitle = card
       .querySelector(".card__title")
-      .innerText.toLowerCase();
+      .innerText.toLowerCase()
+      .slice(sliceCount);
+    console.log(cardTitle);
     if (cardTitle.includes(searchValue)) {
       card.style.display = "grid";
     } else {
       card.style.display = "none";
     }
   });
+
+  // ============= Fix AOS problem when change Sections =============
+  AOS.refresh();
 }
 
 // ============= Choose section =============
