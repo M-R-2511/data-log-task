@@ -6,8 +6,8 @@ const companiesCards = document.querySelector(".companies__cards");
 const darkModeButton = document.querySelector(".dark-mode");
 
 // ============= Get Data from API =============
-async function getData(apiEndpoint, cards) {
-  const fetchData = await fetch(`${apiBaseUrl}${apiEndpoint}`);
+async function getData(apiEndpoint, cards, quantity) {
+  const fetchData = await fetch(`${apiBaseUrl}${apiEndpoint}${quantity}`);
   fetchData
     .json()
     .then(({ data }) => {
@@ -25,9 +25,9 @@ async function getData(apiEndpoint, cards) {
       });
     });
 }
-getData("persons", personsCards);
-getData("books", booksCards);
-getData("companies", companiesCards);
+getData("persons", personsCards, "?_quantity=20");
+getData("books", booksCards, "?_quantity=10");
+getData("companies", companiesCards, "?_quantity=15");
 
 // Show Data in Cards
 function showData(data, cards) {
@@ -128,7 +128,6 @@ function searchData(input) {
     const cardTitle = card
       .querySelector(".card__title")
       .innerText.toLowerCase();
-    const cardInfo = card.querySelector(".card__info").innerText.toLowerCase();
     if (cardTitle.includes(searchValue)) {
       card.style.display = "grid";
     } else {
