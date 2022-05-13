@@ -138,18 +138,22 @@ function searchData(input) {
 }
 
 // ============= Choose section =============
-const listItems = document.querySelectorAll(".sections__list--item");
+var listItems = document.querySelectorAll(".sections__list--item");
 var persons = document.getElementById("persons");
 var books = document.getElementById("books");
 var companies = document.getElementById("companies");
 
+function toggleActiveClass(item) {
+  listItems.forEach((item) => {
+    item.classList.remove("active");
+  });
+  item.classList.add("active");
+}
+
 listItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    AOS.refresh();
-    listItems.forEach((item) => {
-      item.classList.remove("active");
-    });
-    item.classList.add("active");
+  function chooseSection() {
+    // Remove and add active class for all list items
+    toggleActiveClass(item);
 
     // Show section based on list item
     if (item.innerText === "PERSONS") {
@@ -167,7 +171,12 @@ listItems.forEach((item) => {
         companies.style.display =
           "grid";
     }
-  });
+    // ============= Fix AOS problem when change Sections =============
+    AOS.refresh();
+  }
+
+  // Execute function on click
+  item.addEventListener("click", chooseSection);
 });
 
 // ============= Fix AOS problem when change Sections =============
