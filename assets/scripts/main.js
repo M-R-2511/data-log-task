@@ -134,7 +134,6 @@ function searchData(input) {
       .querySelector(".card__title")
       .innerText.toLowerCase()
       .slice(sliceCount);
-    console.log(cardTitle);
     if (cardTitle.includes(searchValue)) {
       card.style.display = "grid";
     } else {
