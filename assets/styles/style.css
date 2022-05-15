@@ -95,13 +95,20 @@ section:not(:last-child) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   background-color: #fff;
   color: #262626;
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 1.5rem 1.5rem;
-  padding: 0.8rem;
+  border-radius: 0 0 4rem 4rem;
+  padding: 1rem;
   user-select: none;
+}
+
+@media screen and (max-width: 500px) {
+  .nav__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .logo {
@@ -121,6 +128,8 @@ section:not(:last-child) {
   font-weight: 600;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+  margin-block: 0.3rem;
+  padding: 0.2rem;
 }
 
 .label span {
