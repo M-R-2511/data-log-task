@@ -36,7 +36,9 @@ function showData(data, cards) {
       case personsCards:
         cards.innerHTML += `
       <div data-aos="flip-left" class="card">
-          <div style="background-image:url(${card.image})" class="card__image"></div>
+          <div class="card__image">
+            <img loading="lazy" src="${card.image}" alt="${card.name}">
+          </div>
           <div class="card__info">
               <h2 class="card__title"><span>Name</span>: ${card.firstname} ${card.lastname}</h2>
               <h4 class="card__email"><span>Email</span>: ${card.email}</h4>
@@ -51,7 +53,9 @@ function showData(data, cards) {
         cards.innerHTML += `
         <div data-aos="fade-up"
         data-aos-anchor-placement="top-center" class="card">
-            <div style="background-image:url(${card.image})" class="card__image"></div>
+            <div class="card__image">
+              <img loading="lazy" src="${card.image}" alt="${card.name}">
+            </div>
             <div class="card__info">
                 <h2 class="card__title"><span>title</span>: ${card.title}</h2>
                 <h4 class="card__email"><span>author</span>: ${card.author}</h4>
@@ -64,7 +68,9 @@ function showData(data, cards) {
       case companiesCards:
         cards.innerHTML += `
         <div data-aos="fade-down" class="card">
-            <div style="background-image:url(${card.image})" class="card__image"></div>
+            <div class="card__image">
+              <img loading="lazy" src="${card.image}" alt="${card.name}">
+            </div>
             <div class="card__info">
                 <h2 class="card__title"><span>Company</span>: ${card.name}</h2>
                 <h4 class="card__email"><span>Email</span>: ${card.email}</h4>

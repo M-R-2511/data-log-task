@@ -263,6 +263,13 @@ input {
   background-repeat: no-repeat;
 }
 
+.card__image > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .card__info > * {
   padding: 0.3rem 0;
   letter-spacing: 0.05rem;

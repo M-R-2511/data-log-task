@@ -55,7 +55,7 @@
           <form onsubmit="handleFormSubmit(event)" class="search-form">
             <input
               class="search-input"
-              type="text"
+              type="search"
               name="search"
               oninput="searchData(this)"
               placeholder="Search by name"
@@ -86,7 +86,7 @@
           <form onsubmit="handleFormSubmit(event)" class="search-form">
             <input
               class="search-input"
-              type="text"
+              type="search"
               name="search"
               oninput="searchData(this)"
               placeholder="Search by title"
@@ -117,7 +117,7 @@
           <form onsubmit="handleFormSubmit(event)" class="search-form">
             <input
               class="search-input"
-              type="text"
+              type="search"
               name="search"
               oninput="searchData(this)"
               placeholder="Search by company"
@@ -142,10 +142,10 @@
       </section>
     </main>
 
-    <!-- ============= main.js ============= -->
-    <script src="./assets/scripts/main.js"></script>
     <!-- ============= AOS.js ============= -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" ></script>
+    <!-- ============= main.js ============= -->
+    <script src="./assets/scripts/main.js" defer async></script>
     <script>
       AOS.init();
     </script>
