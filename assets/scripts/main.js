@@ -1,9 +1,13 @@
+  // وَقَالَ الَّذِينَ أُوتُوا الْعِلْمَ وَيْلَكُمْ ثَوَابُ اللَّهِ خَيْرٌ لِمَنْ آمَنَ وَعَمِلَ صَالِحًا وَلَا يُلَقَّاهَا إِلَّا الصَّابِرُونَ
+  // وقل رب زدني علما
+
 const apiBaseUrl = "https://fakerapi.it/api/v1/";
 const loaders = document.querySelectorAll(".loader");
 const personsCards = document.querySelector(".persons__cards");
 const booksCards = document.querySelector(".books__cards");
 const companiesCards = document.querySelector(".companies__cards");
-const darkModeButton = document.querySelector(".dark-mode");
+const darkModeButton = document.getElementById("dark-mode");
+const rainbowColors = document.getElementById("rainbow-colors");
 
 // ============= Get Data from API =============
 async function getData(apiEndpoint, cards, quantity) {
@@ -37,7 +41,7 @@ function showData(data, cards) {
         cards.innerHTML += `
       <div data-aos="flip-left" class="card">
           <div class="card__image">
-            <img loading="lazy" src="${card.image}" alt="${card.name}">
+            <img loading="lazy" src="${card.image}" alt="${card.firstname}">
           </div>
           <div class="card__info">
               <h2 class="card__title"><span>Name</span>: ${card.firstname} ${card.lastname}</h2>
@@ -54,7 +58,7 @@ function showData(data, cards) {
         <div data-aos="fade-up"
         data-aos-anchor-placement="top-center" class="card">
             <div class="card__image">
-              <img loading="lazy" src="${card.image}" alt="${card.name}">
+              <img loading="lazy" src="${card.image}" alt="${card.title}">
             </div>
             <div class="card__info">
                 <h2 class="card__title"><span>title</span>: ${card.title}</h2>
@@ -106,6 +110,17 @@ darkModeButton.addEventListener("click", () => {
   });
 });
 
+// ============= Rainbow Colors =============
+
+rainbowColors.addEventListener("click", () => {
+  const header = document.querySelector("header");
+  const main = document.querySelector("main");
+
+  header.classList.toggle("rainbow-colors--mode");
+  main.classList.toggle("rainbow-colors--mode");
+
+});
+
 // ============= Handle form submit =============
 function handleFormSubmit(event) {
   event.preventDefault();
@@ -141,7 +156,7 @@ function searchData(input) {
       .innerText.toLowerCase()
       .slice(sliceCount);
     if (cardTitle.includes(searchValue)) {
-      card.style.display = "grid";
+      card.style.display = "block";
     } else {
       card.style.display = "none";
     }
@@ -171,19 +186,19 @@ listItems.forEach((item) => {
 
     // Show section based on list item
     if (item.innerText === "PERSONS") {
-      persons.style.display = "grid";
+      persons.style.display = "block";
       books.style.display = companies.style.display = "none";
     } else if (item.innerText === "BOOKS") {
-      books.style.display = "grid";
+      books.style.display = "block";
       persons.style.display = companies.style.display = "none";
     } else if (item.innerText === "COMPANIES") {
       persons.style.display = books.style.display = "none";
-      companies.style.display = "grid";
+      companies.style.display = "block";
     } else {
       persons.style.display =
         books.style.display =
         companies.style.display =
-          "grid";
+          "block";
     }
     // ============= Fix AOS problem when change Sections =============
     AOS.refresh();
