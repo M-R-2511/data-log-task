@@ -35,20 +35,30 @@ getData("companies", companiesCards, "?_quantity=15");
 
 // Show Data in Cards
 function showData(data, cards) {
-  data.forEach((card) => {
+  data.forEach((card, i) => {
     switch (cards) {
       case personsCards:
         cards.innerHTML += `
       <div data-aos="flip-left" class="card">
           <div class="card__image">
-            <img loading="lazy" src="${card.image}" alt="${card.firstname}">
+            <img loading="lazy" src="${card.image + i}" alt="${card.firstname}">
           </div>
           <div class="card__info">
-              <h2 class="card__title"><span><i class="fa fa-solid fa-user"></i></span>: ${card.firstname} ${card.lastname}</h2>
-              <h4 class="card__email"><span><i class="fa fa-solid fa-envelope"></i></span>: ${card.email}</h4>
-              <p><span><i class="fa fa-solid fa-calendar"></i></span>: ${card.birthday}</p>
-              <p><span><i class="fa fa-solid fa-phone"></i></span>: ${card.phone}</p>
-              <p><span><i class="fa fa-solid fa-link"></i> </span>: <a href="${card.website}" target="_blank" class="card__link">${card.website}</a></p>
+              <h2 class="card__title"><span><i class="fa fa-solid fa-user"></i></span>: ${
+                card.firstname
+              } ${card.lastname}</h2>
+              <h4 class="card__email"><span><i class="fa fa-solid fa-envelope"></i></span>: ${
+                card.email
+              }</h4>
+              <p><span><i class="fa fa-solid fa-calendar"></i></span>: ${
+                card.birthday
+              }</p>
+              <p><span><i class="fa fa-solid fa-phone"></i></span>: ${
+                card.phone
+              }</p>
+              <p><span><i class="fa fa-solid fa-link"></i> </span>: <a href="${
+                card.website
+              }" target="_blank" class="card__link">${card.website}</a></p>
           </div>
       </div>
       `;
@@ -58,13 +68,21 @@ function showData(data, cards) {
         <div data-aos="fade-up"
         data-aos-anchor-placement="top-center" class="card">
             <div class="card__image">
-              <img loading="lazy" src="${card.image}" alt="${card.title}">
+              <img loading="lazy" src="${card.image + i}" alt="${card.title}">
             </div>
             <div class="card__info">
-                <h2 class="card__title"><span><i class="fa fa-solid fa-book"></i></span>: ${card.title}</h2>
-                <h4 class="card__email"><span><i class="fa fa-solid fa-user"></i></span>: ${card.author}</h4>
-                <p><span><i class="fa fa-solid fa-calendar"></i></span>: ${card.published}</p>
-                <p class="card__description"><span><i class="fa fa-solid fa-book-open"></i></span>: <q>${card.description}</q></p>
+                <h2 class="card__title"><span><i class="fa fa-solid fa-book"></i></span>: ${
+                  card.title
+                }</h2>
+                <h4 class="card__email"><span><i class="fa fa-solid fa-user"></i></span>: ${
+                  card.author
+                }</h4>
+                <p><span><i class="fa fa-solid fa-calendar"></i></span>: ${
+                  card.published
+                }</p>
+                <p class="card__description"><span><i class="fa fa-solid fa-book-open"></i></span>: <q>${
+                  card.description
+                }</q></p>
             </div>
         </div>
         `;
@@ -73,14 +91,24 @@ function showData(data, cards) {
         cards.innerHTML += `
         <div data-aos="fade-down" class="card">
             <div class="card__image">
-              <img loading="lazy" src="${card.image}" alt="${card.name}">
+              <img loading="lazy" src="${card.image + i}" alt="${card.name}">
             </div>
             <div class="card__info">
-                <h2 class="card__title"><span><i class="fa fa-solid fa-building"></i></span>: ${card.name}</h2>
-                <h4 class="card__email"><span><i class="fa fa-solid fa-envelope"></i></span>: ${card.email}</h4>
-                <p><span><i class="fa fa-solid fa-globe"></i></span>: ${card.country}</p>
-                <p><span><i class="fa fa-solid fa-phone"></i></span>: ${card.phone}</p>
-                <p><span><i class="fa fa-solid fa-link"></i> </span>: <a href="${card.website}" target="_blank" class="card__link">${card.website}</a></p>
+                <h2 class="card__title"><span><i class="fa fa-solid fa-building"></i></span>: ${
+                  card.name
+                }</h2>
+                <h4 class="card__email"><span><i class="fa fa-solid fa-envelope"></i></span>: ${
+                  card.email
+                }</h4>
+                <p><span><i class="fa fa-solid fa-globe"></i></span>: ${
+                  card.country
+                }</p>
+                <p><span><i class="fa fa-solid fa-phone"></i></span>: ${
+                  card.phone
+                }</p>
+                <p><span><i class="fa fa-solid fa-link"></i> </span>: <a href="${
+                  card.website
+                }" target="_blank" class="card__link">${card.website}</a></p>
             </div>
         </div>
         `;
